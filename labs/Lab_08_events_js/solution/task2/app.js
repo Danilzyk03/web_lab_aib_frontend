@@ -1,19 +1,25 @@
-function updateColor() {
-  var red = document.getElementById("red").value || 0;
-  var green = document.getElementById("green").value || 0;
-  var blue = document.getElementById("blue").value || 0;
+const redInput = document.getElementById('redColor');
+const greenInput = document.getElementById('greenColor');
+const blueInput = document.getElementById('blueColor');
+const boxColor = document.getElementById('boxColor');
 
-  red = validateInput(red);
-  green = validateInput(green);
-  blue = validateInput(blue);
+redInput.addEventListener('change', changeColor);
+greenInput.addEventListener('change', changeColor);
+blueInput.addEventListener('change', changeColor);
 
-  var colorDisplay = document.getElementById("color-display");
-  colorDisplay.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
-}
+function changeColor() {
+    const redValue = redInput.value;
+    const greenValue = greenInput.value;
+    const blueValue = blueInput.value;
 
-function validateInput(value) {
-  if (isNaN(value)) {
-      return 0;
-  }
-  return Math.max(0, Math.min(value, 255));
+    if (redValue >= 0 && redValue <= 255 &&
+        greenValue >= 0 && greenValue <= 255 &&
+        blueValue >= 0 && blueValue <= 255) {
+
+        const color = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
+
+        boxColor.style.backgroundColor = color;
+    } else {
+        alert('Введите корректное значение');
+    }
 }

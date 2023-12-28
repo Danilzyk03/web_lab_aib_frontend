@@ -1,31 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Generator</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>lab7</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
 </head>
 <body>
+    <div class="fullDisplay">
+        <div class="blockColor">
+            <label for="redColor" >Red</label>
+            <input id="redColor" type="text" name="redColor" min="0" max="255">
+            <label for="greenColor" >Green</label>
+            <input id="greenColor" type="text" name="greenColor" min="0" max="255">
+            <label for="blueColor" >Blue</label>
+            <input id="blueColor" type="text" name="blueColor" min="0" max="255">
+        </div>
+        <div id="boxColor">
 
-<div class="color-generator">
-    <div class="inputs-column">
-        <label for="red">Red:</label>
-        <input type="text" id="red" maxlength="3" pattern="\d*" oninput="updateColor()">
-        
-        <label for="green">Green:</label>
-        <input type="text" id="green" maxlength="3" pattern="\d*" oninput="updateColor()">
-        
-        <label for="blue">Blue:</label>
-        <input type="text" id="blue" maxlength="3" pattern="\d*" oninput="updateColor()">
+        </div>
     </div>
-    
-    <div class="color-display-column">
-        <label for="highlighted">Highlighted:</label>
-        <span id="color-display"></span>
-    </div>
-</div>
-
-<script src="app.js"></script>
 </body>
 </html>
